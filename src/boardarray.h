@@ -16,6 +16,18 @@ class BoardArray : public Board {
         void add(Entry* entry) {
             // TODO: IMPLEMENT THIS FUNCTION
             // ALGORITHM IS PROVIDED IN INSTRUCTIONS.TXT
+            if (index < SIZE) {
+                array[index] = *entry;
+                index++; 
+            } else {
+                for (int i=0; i<SIZE; i++) {
+                    if (entry->compare(&array[i])){
+                        array[i] = *entry;
+                        
+                    }
+                }
+            }
+
             return;
         }
 
